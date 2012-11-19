@@ -1,0 +1,95 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel="shortcut icon", href="/images/gamefox_icon.png")
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/header.css')
+    link(rel='stylesheet', href='/stylesheets/wrapper.css')
+    link(rel='stylesheet', href='/stylesheets/footer.css')
+    script(src='javascripts/jquery-1.8.3.min.js')
+
+  body
+    #box
+      #header
+        #nav
+          ol
+          
+            #li_logo
+              li
+                a(href="/")
+                  img(src='/images/gamefox_logo.png', height=70, width=300)
+            #options
+              li#search
+                form(method='get', class='cool_outline1', id='searchForm')
+                  input(type='text', name='search',placeholder='search', class='cool_outline1')
+              #options_list(class="cool_outline2")
+                li
+                  a(href='/home') Home
+                li 
+                  a(href='/guilds') Guilds
+                li
+                  a(href='/user/friends') Friends
+                li
+                  a(href='/ask') Q/A
+                li
+                  a(href='/logout') Logout
+                
+
+      #newPost
+
+          form(method='post')
+            #new
+              textarea(name='textarea_post1', wrap="off", placeholder='Enter Post')
+            #new_post_button
+              form(method='post', action='/new/post')
+                input(type='submit', name='post_submit1', value='Post', id='submit_post1')
+
+            #sign
+
+              ol
+                li
+                  form(method='get', action='/home/signup')
+                    input(type='submit', name='signup', value='Sign Up')
+                li 
+                  form(method='get', action='/home')
+                    input(type='submit', action, name='login', value='Log In')
+                   
+            
+            #quote
+              p "A social network for gamers<br> and game developers"
+
+      #wrapper
+        
+        #sideArea
+          #sideProfile
+            if(typeof username !== 'undefined')
+              p(style='font-size:30px;') #{username}'s Profile
+            else
+              p Profile Area
+
+          block profile
+          #sideUpdates
+            p Guilds
+            block updates
+          #sideFriends
+            p Friends
+            block friends
+
+
+        #mainArea
+          block mainArea
+      #footer
+        p Copyright &copy Gamefox #{+new Date().getFullYear()}
+        br
+        a(href='/home') Blog
+        |
+        a(href='http://github.com/jawerty') Github
+        |
+        a(href='/home') About
+        |
+        a(href='/home/contact') Contact
+        br
+        br
+        a(href="https://twitter.com/Jawerty", class="twitter-follow-button", data-show-count="false", data-size="large") Follow @Jawerty
+        script(type='text/javascript') !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

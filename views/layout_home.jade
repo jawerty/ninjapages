@@ -1,0 +1,79 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel="shortcut icon", href="/images/gamefox_icon.png")
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/header.css')
+    link(rel='stylesheet', href='/stylesheets/wrapper.css')
+    link(rel='stylesheet', href='/stylesheets/footer.css')
+    script(src='javascripts/jquery-1.8.3.min.js')
+
+  body
+    #box
+      #header
+        #nav
+          ol
+          
+            #li_logo
+              li
+                a(href="/")
+                  img(src='/images/gamefox_logo.png', height=70, width=300)
+            #options
+              li#search
+                form(method='get', class='cool_outline1', id='searchForm')
+                  input(type='text', name='search',placeholder='search', class='cool_outline1')
+              #options_list(class="cool_outline2")
+                li
+                  a(href='/home') Home
+                li 
+                  a(href='/guilds') Guilds
+                li
+                  a(href='/user/friend') Users
+                li
+                  a(href='/ask') Q/A
+      #login_signup
+
+        
+        table
+          tr
+            th
+              td
+                #login_area
+                  form(method='post', id='login_form')
+                    table
+                      tr
+                        img(src='/images/login_text.png', height=80, width=210, style='margin-left:12px;')br
+                        p #{failure1}
+                        br
+                        input(type='text', name='username', class='form_text', placeholder='username')br
+                        input(type='password', name='password', class='form_text', placeholder='password')br
+                        th
+                          input(type='submit', name='submitLogin', class='form_button', value='Log In')
+                        th(style='vertical-align:middle;padding-left:20px;')
+                          label Haven't signed up<br> yet? Signup <a href='/home/signup'>here</a>
+            th
+              #mainArea_blog(style='margin-left:20px;text-align:left;')
+                img(src='/images/gamefox_blog_text.png', height=100, width=450)
+                br
+                br 
+                p Gamefox is a website where gamers and game developers are connected through a social networking platform. Gamefox is currently in its alpha stage. Contact us <a href='/home/contact' style='text-decoration:none;color:#006EFF;'>here</a> if you'd like to either contribute to the project, or simply ask us question. 
+                br
+                p Github: 
+                  a(href='http://github.com/jawerty', style='text-decoration:none;color:#006EFF;') http://github.com/jawerty
+
+        
+      #footer
+        p Copyright &copy Gamefox #{+new Date().getFullYear()}
+        br
+        a(href='/home') Blog
+        |
+        a(href='http://github.com/jawerty') Github
+        |
+        a(href='/home') About
+        |
+        a(href='/home/contact') Contact
+        br
+        br
+        a(href="https://twitter.com/Jawerty", class="twitter-follow-button", data-show-count="false", data-size="large") Follow @Jawerty
+        script(type='text/javascript') !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");

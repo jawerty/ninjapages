@@ -1,0 +1,29 @@
+#footer {
+  margin: 0 auto;
+  height: 200px;
+  padding: 0;
+  text-align: center;
+  font-size: 16px;
+  width:100%;
+  background-color: #b8b8b8;
+   color: #444;
+  bottom: 100%;
+  padding-top: 50px;
+  border-top: 3px solid #A0A0A0;
+}
+#footer a{
+	text-decoration:none;
+	color: #00BCD1;
+  margin: 10px;
+  font-size: 20px;
+}
+#footer_content {
+  padding : 30px;
+}
+#footer_links {
+  margin-top: 5px;
+}
+.twitter-follow-button{
+
+color: #606060;
+}
