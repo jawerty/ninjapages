@@ -2,6 +2,8 @@
 /**
  * Module dependencies.
  */
+var crypto = require('crypto');
+require( './db' );
 var username = undefined;
 
 var express = require('express')
