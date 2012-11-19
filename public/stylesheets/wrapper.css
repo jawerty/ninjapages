@@ -339,7 +339,7 @@ list-style-type: none;
 
 	width: 470px;
 	font-size: 15px;
-	border-right: 2px solid #C2C2C2;
+	border-right: 1px solid #ddd;
 }
 #login_form a{
   text-decoration: none;
