@@ -1,1 +1,1 @@
-web: node gamefox.js
+web: node gamefox
