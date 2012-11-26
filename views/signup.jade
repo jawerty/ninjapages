@@ -3,8 +3,8 @@ block Content
   #login_signup
     form(method='post', action='/signup')
       #signup_form
-        img(src='/images/pagefly_signup.png', height=110, width=330, style='padding-top:40px;display: block;   margin-left: auto;   margin-right: auto;')br
-        p(style='margin-left:150px;') #{failure}
+        img(src='/images/ninjapages_signup.png', height=110, width=330, style='padding-top:40px;display: block;   margin-left: auto;   margin-right: auto;')br
+        p #{failure}
         #table_signup
           #signup_options
             input(type='text', name='first', class='form_text_signup', placeholder='first name')br
@@ -13,6 +13,7 @@ block Content
             input(type='password', name='password1', class='form_text_signup', placeholder='password')br
             input(type='password', name='password2', class='form_text_signup', placeholder='confirm password')br
             input(type='text', name='email', class='form_text_signup', placeholder='email')
+
                   
           div(style='text-align:center;')        
             input(type='submit',id='signup_submit', name='submitSignup')

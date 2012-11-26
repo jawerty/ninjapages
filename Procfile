@@ -1,1 +1,1 @@
-web: node pagefly
+web: node ninjapages

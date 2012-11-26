@@ -1,19 +1,23 @@
 #footer {
+  position: relative;
   margin: 0 auto;
-  height: 200px;
+  height: 150px;
   padding: 0;
   text-align: center;
   font-size: 16px;
   width:100%;
-  background-color: #b8b8b8;
+  background-color: #343838;
    color: #444;
-  bottom: 100%;
-  padding-top: 40px;
-  box-shadow:  inset 0 5px 5px -1px #999;
+  
+  padding-top: 10px;
+  box-shadow:  inset 0 4px 4px -1px #eee;
+}
+#footer p{
+  color: #aaa;
 }
 #footer a{
 	text-decoration:none;
-	color: #00BCD1;
+	color: #00B4CC;
   margin: 10px;
   font-size: 20px;
 }

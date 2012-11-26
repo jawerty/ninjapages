@@ -6,7 +6,7 @@ float: left;
   padding-top: 1%;
   padding-bottom: 1%;
   width: 100%;
-  background: #E9E9E9;
+  background: #343838;
     border-bottom: 1px solid #B1B1B1;
   display: block;
   text-align: center;
@@ -16,9 +16,7 @@ float: left;
   text-align: center;
   padding: 0px;
   border-radius: 1px;
-  border-left: 1px solid #E7E7E7;
-  border-right: 1px solid #E7E7E7;
-  border-top: 2px solid #E7E7E7;
+  
   width: 80%;
   margin: 0 auto;
   top: 0%;
@@ -33,7 +31,7 @@ float: left;
   height: 50px;  
   border-radius: 1px;
   font-size:100%;
-  color: #444;
+  color: #F7F7F7;
   text-align: center;
   padding-left: 5px; 
   padding-right: 5px;
@@ -46,14 +44,14 @@ float: left;
 
 
 #nav li:hover a{
-  color: #006EFF;
+  color: #00B4CC;
 }
 #nav a{
   text-decoration: none;
-  color: #444;
+  color: #F7F7F7;
   font-family: verdana;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 90%;
 
 }
 #nav a:hover{
@@ -76,9 +74,7 @@ float: left;
 }
 #options_list{
   float: right;
-  padding-left: 14px;
-  padding-right: 14px;
-    margin-left: 10px;
+
 
 }
 #search {
@@ -86,58 +82,18 @@ float: left;
   float: left;
 }
 #searchForm{
-  margin-top: 0px;
+  margin-top: 3%;
 }
 #search_text{
   width: 90%;
 }
-#sub_nav {
-  background-color: #d5d5d5;
-  min-height:137px;
-  max-height:137px;
 
-  min-width: 950px;
-  max-width: 950px;
-
-  border-left: 1px solid #A1A1A1;
-  border-right: 1px solid #A1A1A1;
-  margin: 0 auto;
-  border-bottom: 1px solid #aaa;
-  box-shadow:  0 4px 2px -2px #111;
-}
-#sub_nav ol{
-  width: 100%;
-    min-height:50px;
-  max-height:50px;
-  margin: 0 auto;
-    display: inline-block;
-    vertical-align: middle;
-}
-#sub_nav ol li{
-  float: right;
-  padding: 1.5%;
-  margin: 0px;
-  margin-right: 0px;
-  border-radius: 1px;
-  font-size:116%;
-  color: #444;
-  text-align: center;
-  padding-left: 1%; 
-  padding-right: 1%;
-  font-family:sans-serif;
-
-  vertical-align:middle;
-  display:table-cell;
-}
-#sub_nav ol  li:hover a{
-  color: #006EFF;
-}
 #sub_nav a{
   text-decoration: none;
-  color: #444;
+  color: #00B4CC;
   font-family: verdana;
   font-weight: bold;
-  font-size: 100%;
+  font-size: 90%;
 
 }
 .cool_outline1 {
@@ -147,7 +103,6 @@ color: #777;
 border-radius: 7px;
 font-size: 99%;
 padding: 2.7%;
-border: 2px solid #C2C2C2;
 box-shadow: inset 3px 3px 3px 3px #eee;
 font-family:verdana;
 
@@ -157,7 +112,6 @@ font-family:verdana;
 outline: none;
 color: #777;
 border-radius: 7px;
-border: 2px solid #C2C2C2;
 box-shadow: inset 3px 3px 3px 3px #eee;
 font-family:verdana;
 

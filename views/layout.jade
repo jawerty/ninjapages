@@ -2,15 +2,17 @@ doctype 5
 html
   head
     title= title
-    link(rel='image_src', href='http://gamefox.herokuapp.com/images/pagefly_icon.png')
-    link(rel="shortcut icon", href="/images/pagefly_icon.png")
+    link(rel='image_src', href='http://ninjapages.herokuapp.com/images/pagefly_icon.png')
+    link(rel="shortcut icon", href="/images/ninjapages_icon.png")
     link(rel='stylesheet', href='/stylesheets/reset.css')
     link(rel='stylesheet', href='/stylesheets/header.css')
     link(rel='stylesheet', href='/stylesheets/wrapper.css')
     link(rel='stylesheet', href='/stylesheets/footer.css')
 
     script(src='javascripts/jquery-1.8.3.min.js')
+    script(src='javascripts/clearForms.js')
 
+      
   body
     #box
       #header
@@ -20,42 +22,39 @@ html
             #li_logo
               li
                 a(href="/")
-                  img(src='/images/pagefly_logo.png', height=50, width=240)
+                  img(src='/images/ninjapages_logo.png', height=40, width=180)
+              if (typeof username != 'undefined')
+                - var x = username
+                if (x.length > 16)
+                  x = x.substring(0, 15) + '...'
+                li(name='user') Hello, <label style='color:#00B4CC'>#{x}</label>
+                
             #options
+              
               li#search
-                form(method='get', class='cool_outline1', id='searchForm')
+                form(method='get', id='searchForm')
                   input(type='text', name='search',placeholder='search', class='cool_outline1', id='search_text')
-              #options_list(class="cool_outline2")
+              #options_list
+
                 li
                   a(href='/') Home
                 li
                   a(href='/') Pages
                 li
-                  a(href='/') Q/A
-                li
                   a(href='/signup') Signup
-
+                if (typeof username != 'undefined')
+                  li
+                    a(href='/logout') Logout
                 
 
       
-      #sub_nav
-        ol
-          if (typeof username != 'undefined')
-            li
-
-              a(href='/logout') Logout
-          if (typeof username != 'undefined')
-
-            li Hello, <label style='color:#006EFF'>#{username}</label>
-            
-          else
-            li Welcome to Pagefly
+      
 
           
       block Content 
       #footer
         br
-        p Copyright &copy Pagefly #{+new Date().getFullYear()}
+        p Copyright &copy Ninjapages #{+new Date().getFullYear()}
         br
         a(href='/') Blog
         |

@@ -52,11 +52,11 @@ app.get('/logout', function(req, res) {
 });
 app.use(function(req,res) { 
     res.render('404', 
-               { locals: {'title':'pagefly url is Not Found'}, }, 
+               { locals: {'title':'Ninjapages url is Not Found'}, }, 
                function(err,str) { res.send(str,404); 
                }
 ); 
 });
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("pagefly server listening on port " + app.get('port'));
+  console.log("Ninjapages server listening on port " + app.get('port'));
 });

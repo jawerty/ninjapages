@@ -6,11 +6,12 @@ var user     = mongoose.model( 'user' );
 /*************/
 var failure1 = null;
 
-var t = 'pagefly';
+var t = 'Ninjapages';
 
 
 exports.home = function(req, res){
 if(typeof username === 'undefined'){
+
   res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
 }else
   res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
@@ -30,7 +31,7 @@ exports.home_post_handler = function(req, res){
                     console.log('username and password match for username, ' + username1); 
 
                     req.session.username = username1;
-                    
+
                     username = req.session.username;
                     failure1 = null;
                     res.redirect('/');

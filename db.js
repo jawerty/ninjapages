@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
     ,ObjectId = Schema.ObjectId;
 
-var db_url = process.env.MONGOHQ_URL || "http://localhost:27017/pageflyDB", 
+var db_url = process.env.MONGOHQ_URL || "http://localhost:27017/ninjapagesDB", 
     db = mongoose.connect(db_url);
 
 

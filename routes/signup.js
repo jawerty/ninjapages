@@ -4,9 +4,9 @@ var mongoose = require( 'mongoose' );
 var regex_email = require('../regex_email');
 var user     = mongoose.model( 'user' );
 var crypto = require('crypto');
-var failure1;
+var failure2;
 /****************/
-var t = 'pagefly';
+var t = 'Ninjapages';
 exports.signup = function(req, res){
 
 	res.render('signup', {title: 'Sign Up | ' + t, failure:null});
@@ -28,15 +28,15 @@ var twenty_six_char = "12345678912345678912345678";
     if(password1.length < eight_char.length || password1.length > twenty_six_char.length){
 
         console.log('password length is not valid');
-        failure1 = 'Password length must be from 8 to 26 characters';
-        console.log(failure1);
+        failure2 = 'Password length must be from 8 to 26 characters';
+        console.log(failure2);
         res.redirect('/signup-failure');
 
     }else{
         console.log('password length is fine.');
 
         if (password1 != password2) {
-        failure1 = 'Passwords do not match';
+        failure2 = 'Passwords do not match';
         res.redirect('/signup-failure');
         
 
@@ -45,13 +45,13 @@ var twenty_six_char = "12345678912345678912345678";
                 console.log('valid email'); 
                 if (first == "" || last == "" || email == "" || password1 == "" || password2 == "" || newUsername == ""){
                     console.log('Empty field');
-                    failure1 = 'You left a field empty.';
+                    failure2 = 'You left a field empty.';
                     res.redirect('/signup-failure');
                 }else{
                     user.findOne({user_name: newUsername}, function(err, usernames) {
                         if (usernames) { 
                             console.log("user exists");
-                            failure1 = 'Username already exists';
+                            failure2 = 'Username already exists';
                             res.redirect('/signup-failure');
 
                         } else { 
@@ -59,7 +59,7 @@ var twenty_six_char = "12345678912345678912345678";
                             user.findOne({email: email}, function(err, emails) {
                                 if (emails){
                                     console.log('email exists');
-                                    failure1 = 'Email already exists';
+                                    failure2 = 'Email already exists';
                                     res.redirect('/signup-failure');
                                 }else{
                                     var newUser = new user({ 
@@ -83,7 +83,7 @@ var twenty_six_char = "12345678912345678912345678";
                 }
             }else{
                console.log('invalid email');
-               failure1 = "Invalid email account.";
+               failure2 = "Invalid email account.";
                res.redirect('/signup-failure');
             }      
         }
@@ -95,5 +95,5 @@ exports.success = function(req, res){
 	res.render('signupSuccess', {title: 'Successful Signup | ' + t})
 }
 exports.failure = function(req, res){
-	res.render('signup', {title: 'Failed Signup | ' + t, failure:failure1})
+	res.render('signup', {title: 'Failed Signup | ' + t, failure:failure2})
 }
