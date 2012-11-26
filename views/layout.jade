@@ -26,16 +26,16 @@ html
               
                 
             #options
-              if (typeof username != 'undefined')
-                - var x = username
-                if (x.length > 16)
-                  x = x.substring(0, 14) + '...'
-                li(name='user', style='font-size:110%;') Hello, <label style='color:#00B4CC'>#{x}</label>
+              
               li#search
                 form(method='get', id='searchForm')
                   input(type='text', name='search',placeholder='search', class='cool_outline1', id='search_text')
               #options_list
-
+                if (typeof username != 'undefined')
+                  - var x = username
+                  if (x.length > 16)
+                    x = x.substring(0, 14) + '...'
+                  li(name='user', style='font-size:110%;') Hello, <label style='color:#00B4CC'>#{x}</label>
                 li
                   a(href='/') Home
                 li
