@@ -51,7 +51,7 @@ float: left;
   color: #F7F7F7;
   font-family: verdana;
   font-weight: bold;
-  font-size: 90%;
+  font-size: 110%;
 
 }
 #nav a:hover{
@@ -82,7 +82,7 @@ float: left;
   float: left;
 }
 #searchForm{
-  margin-top: 3%;
+  margin-top: 4%;
 }
 #search_text{
   width: 90%;
