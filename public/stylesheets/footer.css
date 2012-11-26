@@ -8,8 +8,8 @@
   background-color: #b8b8b8;
    color: #444;
   bottom: 100%;
-  padding-top: 50px;
-  border-top: 3px solid #A0A0A0;
+  padding-top: 40px;
+  box-shadow:  inset 0 5px 5px -1px #999;
 }
 #footer a{
 	text-decoration:none;
@@ -18,7 +18,6 @@
   font-size: 20px;
 }
 #footer_content {
-  padding : 30px;
 }
 #footer_links {
   margin-top: 5px;

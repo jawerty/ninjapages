@@ -1,83 +1,18 @@
-
-doctype 5
-html
-  head
-    title= title
-    link(rel="shortcut icon", href="/images/gamefox_icon.png")
-    link(rel='stylesheet', href='/stylesheets/reset.css')
-    link(rel='stylesheet', href='/stylesheets/header.css')
-    link(rel='stylesheet', href='/stylesheets/wrapper.css')
-    link(rel='stylesheet', href='/stylesheets/footer.css')
-    link(rel='image_src', href='http://gamefox.herokuapp.com/images/gamefox_logo.png')
-
-    script(src='/javascripts/jquery-1.8.3.min.js')
-
-  body
-    #box
-      #header
-        #nav
-          ol
-          
-            #li_logo
-              li
-                a(href="/")
-                  img(src='/images/gamefox_logo.png', height=70, width=300)
-            #options
-              li#search
-                form(method='get', class='cool_outline1', id='searchForm')
-                  input(type='text', name='search',placeholder='search', class='cool_outline1')
-              #options_list(class="cool_outline2")
-                li
-                  a(href='/home') Home
-                li 
-                  a(href='/guilds') Guilds
-                li
-                  a(href='/user/friend') Users
-                li
-                  a(href='/ask') Q/A
-      #login_signup
-        form(method='post', action='/home/signup')
-          #signup_form
-            img(src='/images/signup_text.png', height=110, width=330, style='padding-top:40px;display: block;   margin-left: auto;   margin-right: auto;')br
-            p(style='margin-left:150px;') #{failure}
-            table#table_signup
-              tr
-
-                th
-                  #signup_options
-                    input(type='text', name='first', class='form_text_signup', placeholder='first name')br
-                    input(type='text', name='last', class='form_text_signup', placeholder='last name')br
-                    input(type='text', name='username', class='form_text_signup', placeholder='username')br
-                    input(type='password', name='password1', class='form_text_signup', placeholder='password')br
-                    input(type='password', name='password2', class='form_text_signup', placeholder='confirm password')br
-                    input(type='text', name='email', class='form_text_signup', placeholder='email')br
-                th
-                  #optional_signup
-
-                    p(style='margin-bottom:12px;margin-left:12px;font-size:25px;') Profile Info:
-                    textarea(name='bio', id='bio', placeholder='Bio', wrap='off')br
-                    input(type='text', name='fav_game', class='form_text_signup', placeholder='Favorite games')br
-                    input(type='text', name='fav_engine', class='form_text_signup', placeholder='Favorite game frameworks')br
-                    br
-                    br
-                    label(style='margin-left: 12px; font-size:25px;') Account type:&nbsp
-                    select(name='account_type', id='select_signup')
-                      option(value='casual', selected) Casual
-                      option(value='hgame') Hardcore Gamer
-                      option(value='indie') Indie Developer
-            div(style='text-align:center;')        
-              input(type='submit',id='signup_submit', name='submitSignup', class='form_button')
-      #footer
-        p Copyright &copy Gamefox #{+new Date().getFullYear()}
-        br
-        a(href='/home') Blog
-        |
-        a(href='http://github.com/jawerty') Github
-        |
-        a(href='/home') About
-        |
-        a(href='/home/contact') Contact
-        br
-        br
-        a(href="https://twitter.com/Jawerty", class="twitter-follow-button", data-show-count="false", data-size="large") Follow @Jawerty
-        script(type='text/javascript') !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+extends layout
+block Content
+  #login_signup
+    form(method='post', action='/signup')
+      #signup_form
+        img(src='/images/pagefly_signup.png', height=110, width=330, style='padding-top:40px;display: block;   margin-left: auto;   margin-right: auto;')br
+        p(style='margin-left:150px;') #{failure}
+        #table_signup
+          #signup_options
+            input(type='text', name='first', class='form_text_signup', placeholder='first name')br
+            input(type='text', name='last', class='form_text_signup', placeholder='last name')br
+            input(type='text', name='username', class='form_text_signup', placeholder='username')br
+            input(type='password', name='password1', class='form_text_signup', placeholder='password')br
+            input(type='password', name='password2', class='form_text_signup', placeholder='confirm password')br
+            input(type='text', name='email', class='form_text_signup', placeholder='email')
+                  
+          div(style='text-align:center;')        
+            input(type='submit',id='signup_submit', name='submitSignup')

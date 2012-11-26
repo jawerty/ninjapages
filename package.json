@@ -1,6 +1,6 @@
 {
-  "name": "gamefox",
-  "description": "Social networking website made for gamers.",
+  "name": "pagefly",
+  "description": "Microdeployment, deeloping and hosting webpages on the fly.",
   "version": "0.0.1",
   "private": true,
   "engines": {
@@ -8,7 +8,7 @@
     "npm":  "1.1.x"
   },
   "scripts": {
-    "start": "node gamefox"
+    "start": "node pagefly"
   },
   "dependencies": {
     "express": "3.0.2",
