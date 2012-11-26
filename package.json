@@ -1,6 +1,6 @@
 {
-  "name": "pagefly",
-  "description": "Microdeployment, deeloping and hosting webpages on the fly.",
+  "name": "Pagefly",
+  "description": "Microdeployment, developing and hosting webpages on the fly.",
   "version": "0.0.1",
   "private": true,
   "engines": {

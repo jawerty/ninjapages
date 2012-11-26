@@ -11,7 +11,6 @@ var express = require('express')
   , user_view = require('./routes/user_view')
   , http = require('http')
   , path = require('path');
-var MongoStore = require('connect-mongo')(express);
 
 var app = express();
 
@@ -53,7 +52,7 @@ app.get('/logout', function(req, res) {
 });
 app.use(function(req,res) { 
     res.render('404', 
-               { locals: {'title':'gamefox url is Not Found'}, }, 
+               { locals: {'title':'pagefly url is Not Found'}, }, 
                function(err,str) { res.send(str,404); 
                }
 ); 
