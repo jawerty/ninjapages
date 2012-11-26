@@ -137,7 +137,7 @@
 
 }
 #login_form{
-	float: left;
+	margin: 0 auto;
 	padding-left: 6%;
 	padding-top: 10%;
 	padding:5%;
