@@ -8,7 +8,8 @@
   width:100%;
   background-color: #343838;
    color: #444;
-  
+  min-width: 950px;
+  max-width: 950px;
   padding-top: 10px;
   box-shadow:  inset 0 4px 4px -1px #eee;
 }
