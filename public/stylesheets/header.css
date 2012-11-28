@@ -5,9 +5,9 @@ float: left;
 #nav {
   padding-top: 1%;
   padding-bottom: 1%;
-  min-width: 1240px;
-  max-width: 1240px;
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  
   background: #343838;
     border-bottom: 1px solid #B1B1B1;
   display: block;
@@ -19,7 +19,7 @@ float: left;
   padding: 0px;
   border-radius: 1px;
   
-  width: 80%;
+  
   margin: 0 auto;
   top: 0%;
       display: inline-block;
