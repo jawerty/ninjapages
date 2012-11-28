@@ -24,8 +24,7 @@ float: left;
   top: 0%;
       display: inline-block;
     vertical-align: middle;
-  min-width: 1240px;
-  max-width: 1240px;
+
  }
 #nav ol li {
   margin: 0px;
