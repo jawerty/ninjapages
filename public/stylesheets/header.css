@@ -5,8 +5,8 @@ float: left;
 #nav {
   padding-top: 1%;
   padding-bottom: 1%;
-    min-width: 950px;
-  max-width: 950px;
+  min-width: 1200px;
+  max-width: 1200px;
   width: 100%;
   background: #343838;
     border-bottom: 1px solid #B1B1B1;
