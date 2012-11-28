@@ -18,7 +18,8 @@ float: left;
   text-align: center;
   padding: 0px;
   border-radius: 1px;
-  
+  min-width: 1240px;
+  max-width: 100%;
   
   margin: 0 auto;
   top: 0%;
