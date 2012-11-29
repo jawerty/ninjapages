@@ -44,11 +44,17 @@ html
                   li(name='user', style='font-size:110%;') Hello, <label style='color:#00B4CC'>#{x}</label>
                 li
                   a(href='/') Home
-                li
-                  a(href='/') Pages
+                li |
+                if (typeof username != 'undefined')
+                  li 
+                    a(href='/projects/#{username}') My Pages
+                  li |
+
                 li
                   a(href='/signup') Signup
+                
                 if (typeof username != 'undefined')
+                  li |
                   li
                     a(href='/logout') Logout
                 

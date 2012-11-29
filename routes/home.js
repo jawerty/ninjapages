@@ -21,7 +21,7 @@ exports.home_post_handler = function(req, res){
 	
     username1 = req.body.username;
     password = req.body.password;
-
+    
     user.findOne({user_name: username1}, function(err, usernames) {
         if (usernames) {
             console.log('Username and exists!...');

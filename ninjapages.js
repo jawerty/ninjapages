@@ -8,6 +8,7 @@ require( './db' );
 var express = require('express')
   , home = require('./routes/home')
   , signup = require('./routes/signup')
+  , projects = require('./routes/projects')
   , user_view = require('./routes/user_view')
   , http = require('http')
   , path = require('path');
@@ -35,6 +36,9 @@ app.configure('development', function(){
 //app.get('/:userid', user_view.index)
 app.get('/', home.home);
 app.post('/', home.home_post_handler);
+app.get('/projects/:id', projects.my_projects)
+app.post('/projects/:id', projects.my_projects_post_handler)
+
 app.post('/user/:id', user_view.index);
 app.get('/signup', signup.signup);
 app.post('/signup', signup.signup_post_handler);
