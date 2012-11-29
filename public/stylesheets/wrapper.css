@@ -177,15 +177,15 @@
 
 }
 .form_button{
-	margin-left: 13%;
+	margin-left: 8%;
     font-family: verdana;
-	width: 190%;
+	width: 130%;
 	height: 150%;
 	color: #F8F8F8;
 	padding: 10%;
-	font-size: 190%;
+	font-size: 230%;
 	border: 2px solid #C2C2C2;
-	padding: 15%;
+	padding: 5%;
 	border-radius: 5px;
 	background-color: #00B4CC;
 }
