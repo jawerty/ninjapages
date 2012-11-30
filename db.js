@@ -17,7 +17,7 @@ var userSchema = new Schema({
 
 })
 var pageSchema = new Schema({
-	id: ObjectId.
+	id: ObjectId,
 	page_code: String,
 	user: String
 })
