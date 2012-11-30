@@ -2,4 +2,14 @@ extends layout
 block Content
   #login_signup
     br
-    h1 #{user}'s Pages
+    h1(style='font-size:220%') #{user}'s Pages
+    br 
+    br
+    if (typeof username == 'undefined')
+      p This list of user's pages.
+    else
+      form(method='post')
+        #scriptForm
+          h1 Dev Tools
+          textarea(id='scriptArea', placeholder='HTML5 code')br
+          input(type='submit', value='Publish', id='scriptSubmit')

@@ -2,6 +2,7 @@ t = 'Ninjapages'
 require( '../db' );
 var mongoose = require( 'mongoose' );
 var user     = mongoose.model( 'user' );
+var page     = mongoose.model( 'page' );
 var sleep = require('sleep')
 var failure3;
 
@@ -24,5 +25,5 @@ exports.my_projects = function(req, res){
  }));
 }
 exports.my_projects_post_handler = function(req, res){
-
+	//insert page code
 }

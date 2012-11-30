@@ -202,7 +202,9 @@
 	outline-width: 1%;
 	padding: 1%;
 	color: #505050;
+
 }
+
 #signup_form{
 	text-align: center;
 	margin: 0 auto;
@@ -251,3 +253,34 @@
 #home_link:hover{
 	text-decoration:underline; 
 }
+#scriptForm{
+	margin: 5%;
+}
+#scriptArea{
+	width: 50%;
+	height: 200px;
+	border-radius: 5px;
+	border: 2px solid #C2C2C2;
+	font-size: 120%;
+	box-shadow: inset 3px 3px 3px 3px #eee;
+	outline-color: #00B4CC;
+	outline-width: 1%;
+	padding: 1%;
+	color: #505050;
+	resize: none;
+}
+#scriptSubmit{
+	font-family: verdana;
+	width: 20%;
+	height: 30%;
+	color: #F8F8F8;
+	padding: 10%;
+	font-size: 230%;
+	border: 2px solid #C2C2C2;
+	padding: 1%;
+	border-radius: 5px;
+	background-color: #00B4CC;
+	margin-top: 2%;
+}
+
+

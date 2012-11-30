@@ -16,4 +16,10 @@ var userSchema = new Schema({
 
 
 })
+var pageSchema = new Schema({
+	id: ObjectId.
+	page_code: String,
+	user: String
+})
 var user = db.model('user', userSchema);
+var page = db.model('page', pageSchema);
