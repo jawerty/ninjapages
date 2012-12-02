@@ -173,10 +173,7 @@ title = req.params.page;
  				code = page['page_code'];
  				
  				console.log(code)
- 					res.render('page_view', {
-		 				page:code
- 					})
-
+ 				res.send(code);
  				
  				console.log('running code')
  			}else{
