@@ -8,7 +8,7 @@ require( './db' );
 var express = require('express')
   , home = require('./routes/home')
   , signup = require('./routes/signup')
-  , projects = require('./routes/projects')
+  , pages = require('./routes/pages')
   , user_view = require('./routes/user_view')
   , http = require('http')
   , path = require('path');
@@ -33,13 +33,21 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
-//app.get('/:userid', user_view.index)
+
 app.get('/', home.home);
 app.post('/', home.home_post_handler);
-app.get('/projects/:id', projects.my_projects)
-app.post('/projects/:id', projects.my_projects_post_handler)
 
-app.post('/user/:id', user_view.index);
+
+app.get('/user/:id', pages.my_pages)
+app.post('/user/:id', pages.my_pages_post_handler)
+//app.get('/users', home.search)
+
+app.get('/user/:id/edit', pages.edit_profile)
+app.post('/user/:id/edit', pages.edit_profile_post_handler)
+
+app.get('/user/:user/:page', pages.page_view);
+app.post('/user/:user/:page', pages.page_view_post_handler)
+
 app.get('/signup', signup.signup);
 app.post('/signup', signup.signup_post_handler);
 app.get('/signup-failure', signup.failure);

@@ -67,8 +67,9 @@ var twenty_six_char = "12345678912345678912345678";
                                             last: last,
                                             email: email,
                                             user_name: newUsername,
-                                            password1: password1
-       
+                                            password1: password1,
+                                            bio: 'I have no Bio',
+                                            site: 'I have no site'
                                     });
                                     newUser.save();
 

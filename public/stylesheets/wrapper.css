@@ -104,7 +104,7 @@
   background-color: #F7F7F7;
   min-width: 950px;
   max-width: 950px;
-  max-height: 800px;
+  max-height: 10000px;
   min-height: 900px;
     
   border-left: 1px solid #c1c1c1;
@@ -117,7 +117,7 @@
 
 }
 #login_signup h1{
-  color: #00B4CC;
+  color:#343838;
   font-size: 150%;
   font-family: verdana;
   margin: 3%;
@@ -176,6 +176,20 @@
 	color: #505050;
 
 }
+
+.form_text:-moz-placeholder{
+	color: #bbb;
+}
+::-webkit-input-placeholder {
+    color:    #bbb;
+}
+textarea:-moz-placeholder, input:-moz-placeholder {
+    color:    #bbb;
+}
+:-ms-input-placeholder {
+        color:    #bbb;
+}
+
 .form_button{
 	margin-left: 8%;
     font-family: verdana;
@@ -204,7 +218,9 @@
 	color: #505050;
 
 }
-
+.form_text_signup:-moz-placeholder{
+	color: #bbb;
+}
 #signup_form{
 	text-align: center;
 	margin: 0 auto;
@@ -253,11 +269,35 @@
 #home_link:hover{
 	text-decoration:underline; 
 }
+
+#user_profile{
+	margin-left:3%;
+	padding-right:2%;
+	width:40%;
+	height:100%;
+}
+#user_profile label{
+	font-family: sans-serif;
+	color:#505050;
+	font-size: 130%;
+}
 #scriptForm{
 	margin: 5%;
 }
+#scriptTitle{
+	width:50%;
+	height: 20px;
+	border-radius: 3px;
+	border: 2px solid #C2C2C2;
+	font-size: 120%;
+	box-shadow: inset 3px 3px 3px 3px #eee;
+	outline-color: #00B4CC;
+	outline-width: 1%;
+	padding: 1%;
+	color: #505050;
+}
 #scriptArea{
-	width: 50%;
+	width: 100%;
 	height: 200px;
 	border-radius: 5px;
 	border: 2px solid #C2C2C2;
@@ -269,9 +309,10 @@
 	color: #505050;
 	resize: none;
 }
+
 #scriptSubmit{
 	font-family: verdana;
-	width: 20%;
+	width: 40%;
 	height: 30%;
 	color: #F8F8F8;
 	padding: 10%;
@@ -283,4 +324,40 @@
 	margin-top: 2%;
 }
 
-
+#edit_profile{
+	text-align: center;
+	margin: 0 auto;
+	padding: 1%;
+}
+#bio{
+	width: 50%;
+	height: 100px;
+	border-radius: 5px;
+	border: 2px solid #C2C2C2;
+	font-size: 170%;
+	box-shadow: inset 3px 3px 3px 3px #eee;
+	outline-color: #00B4CC;
+	outline-width: 1%;
+	padding: 1%;
+	color: #505050;
+	resize: none;
+	font-family: verdana;
+}
+#bio:-moz-placeholder{
+	color:#bbb;
+}
+#edit_submit{
+    font-family: verdana;
+	width: 20%;
+	height: 60%;
+	color: #F8F8F8;
+	font-size: 240%;
+	border: 2px solid #C2C2C2;
+	border-radius: 5px;
+	background-color: #00B4CC;
+	padding-top: 1%;
+	padding-bottom: 1%;
+   margin: 0 auto;
+   cursor: pointer;
+   margin-top: 3%;
+}

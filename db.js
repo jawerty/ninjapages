@@ -1,3 +1,10 @@
+var date = new Date();
+var dd = date.getDate()
+var mm = date.getMonth()
+var yyyy = date.getFullYear()
+if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} date = mm+'/'+dd+'/'+yyyy; 
+console.log('Date: '+ date)
+
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
     ,ObjectId = Schema.ObjectId;
@@ -12,14 +19,18 @@ var userSchema = new Schema({
     last: String,
     email: String,
     user_name: String,
-    password1: String
-
+    password1: String,
+    bio: String,
+    site: String
 
 })
+
 var pageSchema = new Schema({
 	id: ObjectId,
+    title: String,
 	page_code: String,
-	user: String
+	user: String,
+    created: String
 })
 var user = db.model('user', userSchema);
 var page = db.model('page', pageSchema);
