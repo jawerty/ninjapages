@@ -10,12 +10,15 @@ var t = 'Ninjapages';
 
 
 exports.home = function(req, res){
+
 if(typeof username === 'undefined'){
-
+  
   res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
-}else
+}else{
+  
   res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
-
+  failure1 = null;
+}
 };
 exports.home_post_handler = function(req, res){
 	
@@ -39,6 +42,7 @@ exports.home_post_handler = function(req, res){
                     console.log('username and password do not match for username, ' + username1);
                     failure1 = 'Username and password do not match.'
                     res.redirect('/');
+
                 }
             });
             
@@ -55,6 +59,7 @@ exports.home_post_handler = function(req, res){
 };
 
 exports.page_contact = function(req, res){
+   
     if(typeof username === 'undefined'){
   res.render('contact', {title: 'Home | ' + t})
     }else
