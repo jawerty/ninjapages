@@ -48,7 +48,7 @@ block Content
           
     #pages_display(style='width:100%;float:left;')
       h1(style='font-size:220%;') Pages (Beta)
-      #pages_list(style='border-top: 1px solid #c2c2c2;padding-left:2%;width:100%')
+      #pages_list(style='border-top: 1px solid #c2c2c2;padding-left:2%;width:98%')
         for page in pages
           li(style='list-style:none;margin:1%;')
            a(href='/user/#{user}/#{page.title}', style='text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;')= page.title
