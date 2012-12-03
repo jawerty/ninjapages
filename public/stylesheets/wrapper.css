@@ -198,7 +198,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	color: #F8F8F8;
 	padding: 10%;
 	font-size: 230%;
-	border: 2px solid #C2C2C2;
+	border: 1px solid #C2C2C2;
 	padding: 5%;
 	border-radius: 5px;
 	background-color: #00B4CC;
@@ -211,7 +211,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	border-radius: 5px;
 	border: 2px solid #C2C2C2;
 	font-size: 120%;
-	box-shadow: inset 3px 3px 3px 3px #eee;
+	box-shadow: inset 1px 1px 1px 2px #eee;
 	outline-color: #00B4CC;
 	outline-width: 1%;
 	padding: 1%;
@@ -252,7 +252,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	color: #F8F8F8;
 	padding: 1%;
 	font-size: 120%;
-	border: 2px solid #C2C2C2;
+	border: 1px solid #C2C2C2;
 	border-radius: 5px;
 	background-color: #00B4CC;
 	padding-top: 2%;
