@@ -14,7 +14,7 @@ float: left;
   text-align: center;
 }
 #nav ol {
-
+  margin-left: 0%;
   text-align: center;
   padding: 0px;
   border-radius: 1px;
