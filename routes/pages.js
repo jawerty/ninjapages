@@ -242,6 +242,7 @@ u = req.params.user;
 	if(req.session.username==u){
 		res.render('file_upload', {title: 'File Upload | ' + t, user:u, failure:failure5, win:win})
 		failure5 = null;
+		win = null;
 	}else{
 		res.redirect('/')
 	}
