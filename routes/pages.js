@@ -1,11 +1,15 @@
 t = 'Ninjapages'
 require( '../db' );
+fs = require('fs');
 var mongoose = require( 'mongoose' );
 var user     = mongoose.model( 'user' );
 var page     = mongoose.model( 'page' );
 var sleep = require('sleep')
 var failure3;
+var failure4;
+var failure5;
 var failure1;
+var win;
 /**Date config**/
 var date = new Date();
 var dd = date.getDate()
@@ -32,17 +36,20 @@ exports.my_pages = function(req, res){
 		 				title: usern + '\'s Page | ' + t, 
 		 				user: usern,
 		 				pages:pages,
-		 				users:users
+		 				users:users,
+		 				failure:failure4
  					})
-
+ 					failure4 = null
  				})
  				
  			}else{
 	 			res.render('user_pages', {
 	 				title: usern + '\'s Page | ' + t, 
 	 				user: usern, 
-	 				pages:null
+	 				pages:null,
+	 				failure:failure4
 	 			});
+	 			failure4 = null
  			}
  		});
  	}else{
@@ -54,17 +61,31 @@ exports.my_pages = function(req, res){
  }));
 }
 exports.my_pages_post_handler = function(req, res){
-	var newPage = new page({ 
-		title: req.body.title,
-        page_code: req.body.code,
-		user: req.session.username,
-		created: date
+	var usern = req.params.id;
+	var title1 = req.body.title; 
 
+	
+	if (title1=='' || title1 == ' ' || typeof title1 == 'undefined'){
+		failure4 = 'Please add a Title'
+		console.log('publish error')
+	}else{
+		console.log('title is not empty')
+		
+		
+			var newPage = new page({ 
+			title: title1,
+	        page_code: req.body.code,
+			user: req.session.username,
+			created: date
 
-    });
-    newPage.save();
+	    	});
+	    	newPage.save();
+	    	console.log('non-file uploaded')
+	
+	}
+
     
-    res.redirect('/');
+    res.redirect('/user/'+ usern);
 }
 
 exports.edit_profile = function(req, res){
@@ -177,7 +198,7 @@ title = req.params.page;
  				
  				console.log('running code')
  			}else{
-	 			res.render('user_pages', {
+	 	 		res.render('user_pages', {
 	 				page:null
 	 			});
  			}
@@ -189,5 +210,78 @@ title = req.params.page;
 
 }
 exports.page_view_post_handler = function(req, res){
+
+}
+
+
+exports.page_delete = function(req, res){
+	u = req.params.user;
+	p = req.params.page;
+	if(req.session.username==u){
+		page.findOne({"user": u, "title":p}, function(err, pageTrue){
+			if(pageTrue){
+				pageTrue.remove()
+				console.log('removed')
+				res.redirect('/user/'+u)
+			}else{
+				res.redirect('/user/'+u)
+			}
+		});
+
+
+	}else{
+		res.redirect('/user/'+u)
+	}
+}
+exports.page_delete_post_handler = function(req, res){
+
+}
+exports.file_upload = function(req, res){
+u = req.params.user;
+
+	if(req.session.username==u){
+		res.render('file_upload', {title: 'File Upload | ' + t, user:u, failure:failure5, win:win})
+		failure5 = null;
+	}else{
+		res.redirect('/')
+	}
+}
+exports.file_upload_post_handler = function(req, res){
+	u = req.params.user;
+	p = req.params.page;
+	t = req.body.title1;
+	html = req.files.html_file.path;
+	console.log('psuedo')
+	if (t=='' || t == ' ' || typeof t == 'undefined'){
+		failure5 = 'Please add a Title'
+		console.log('publish file error')
+		res.redirect('/user/'+u+'/upload/file')
+	}else{
+		if(req.files.html_file.type == 'text/html'){
+			fs.readFile(html, 'utf8', function(err, data){
+				if(err){
+					console.log(err)
+				}
+				var newPage = new page({ 
+				title: t,
+			    page_code: data,
+				user: req.session.username,
+				created: date
+
+			  	});
+			   	newPage.save();
+			   	console.log('file uploaded');
+			   	failure5 = null;
+			   	win = 'File upload completed...'
+			   	res.redirect('/user/'+u+'/upload/file')
+				
+			});
+		}else{
+			failure5 = 'Incorrect file format (only HTML files allowed)';
+			console.log('File format incorrect');
+			res.redirect('/user/'+u+'/upload/file')
+		}
+
+	}
 
 }

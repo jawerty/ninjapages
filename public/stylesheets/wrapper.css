@@ -285,7 +285,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	margin: 5%;
 }
 #scriptTitle{
-	width:50%;
+	width:40%;
 	height: 20px;
 	border-radius: 3px;
 	border: 2px solid #C2C2C2;
@@ -312,12 +312,11 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 
 #scriptSubmit{
 	font-family: verdana;
-	width: 40%;
 	height: 30%;
 	color: #F8F8F8;
-	padding: 10%;
-	font-size: 230%;
-	border: 2px solid #C2C2C2;
+	padding: 5%;
+	font-size: 140%;
+	border: 1px solid #C2C2C2;
 	padding: 1%;
 	border-radius: 5px;
 	background-color: #00B4CC;
@@ -333,7 +332,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	width: 50%;
 	height: 100px;
 	border-radius: 5px;
-	border: 2px solid #C2C2C2;
+	border: 1px solid #C2C2C2;
 	font-size: 170%;
 	box-shadow: inset 3px 3px 3px 3px #eee;
 	outline-color: #00B4CC;
@@ -352,7 +351,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	height: 60%;
 	color: #F8F8F8;
 	font-size: 240%;
-	border: 2px solid #C2C2C2;
+	border: 1px solid #C2C2C2;
 	border-radius: 5px;
 	background-color: #00B4CC;
 	padding-top: 1%;
@@ -360,4 +359,24 @@ textarea:-moz-placeholder, input:-moz-placeholder {
    margin: 0 auto;
    cursor: pointer;
    margin-top: 3%;
+}
+#html_upload{
+	border: 1px solid #d2d2d2;
+	border-radius: 8px;
+	margin-bottom: 1.4%;
+	margin-left: 2%;
+
+}
+#fileSubmit{
+	font-size:130%;
+	color:#343838;
+	font-family:verdana;
+	text-decoration:none;
+	font-weight: bold;
+	margin-left:5%
+
+}
+#fileSubmit:hover{
+	color:#00B4CC;
+
 }

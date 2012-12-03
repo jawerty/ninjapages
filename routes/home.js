@@ -37,7 +37,7 @@ exports.home_post_handler = function(req, res){
 
                     username = req.session.username;
                     failure1 = null;
-                    res.redirect('/');
+                    res.redirect('/user/'+username)
                 }else{
                     console.log('username and password do not match for username, ' + username1);
                     failure1 = 'Username and password do not match.'

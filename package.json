@@ -11,7 +11,7 @@
     "start": "node ninjapages"
   },
   "dependencies": {
-    "express": "3.0.2",
+    "express": "3.0.3",
     "jade": "*",
     "mongolian":"0.1.18"
   }

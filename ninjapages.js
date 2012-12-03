@@ -16,17 +16,17 @@ var express = require('express')
 var app = express();
 
 app.configure(function(){
+  app.use(express.logger('dev'));
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
-  app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
   app.use(express.session());
-  app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use(app.router);
 });
 
 
@@ -48,8 +48,15 @@ app.post('/user/:id/edit', pages.edit_profile_post_handler)
 app.get('/user/:user/:page', pages.page_view);
 app.post('/user/:user/:page', pages.page_view_post_handler)
 
+app.get('/user/:user/:page/delete', pages.page_delete);
+app.post('/user/:user/:page/delete', pages.page_delete_post_handler);
+
+app.get('/user/:user/upload/file', pages.file_upload)
+app.post('/user/:user/upload/file', pages.file_upload_post_handler)
+
 app.get('/signup', signup.signup);
 app.post('/signup', signup.signup_post_handler);
+
 app.get('/signup-failure', signup.failure);
 app.get('/signup-success', signup.success);
 

@@ -1,0 +1,19 @@
+extends layout
+block Content
+  #login_signup
+    br  
+    form(method='post', enctype="multipart/form-data", style='margin:0 auto;margin-top:15%;margin-left:10%;margin-right:10%;text-align:center;')
+
+      p(style='font-size:250%;') Upload a single HTML file (alpha)
+      br
+      p #{failure}
+      p #{win} 
+      br
+      input(type='text', name='title1', placeholder='Title', id='scriptTitle')br
+      br
+      br
+      label(style='font-size:130%;color:#343838;font-family:verdana;') File:
+      input(type='file',id='html_upload', name='html_file')br
+      
+      input(type='submit', name='submitBtn', id='scriptSubmit', value='Publish File')
+      br

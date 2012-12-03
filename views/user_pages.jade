@@ -1,6 +1,7 @@
 extends layout
 block Content
   #login_signup
+    
     #user_profile(style='float:left')
       br
       h1(style='margin-left: 0%;font-size:250%') #{user}'s Profile
@@ -28,14 +29,23 @@ block Content
     if (typeof username == 'undefined')
       p(style='margin-left:3%')
     else
-      form(method='post', style='width:50%;margin-left:1%;float:left;border-left: 1px solid #c2c2c2;')
-        #scriptForm()
-          h1(style='margin-left:0%;color:#00B4CC;') Quick Publish
-          input(type='text', name='title', placeholder='Title', id='scriptTitle')br
-          br
-          textarea(id='scriptArea', name='code', placeholder='HTML5 code')br
-          input(type='submit', value='Publish', id='scriptSubmit')
+      #forms(style='width:50%;margin-left:1%;float:left;border-left: 1px solid #c2c2c2;')
+        form(method='post', enctype="multipart/form-data" )
+          #scriptForm(
+            h1(style='margin-left:0%;color:#00B4CC;') Quick Publish
+            
+            p #{failure}
+            br
+            input(type='text', name='title', placeholder='Title', id='scriptTitle')br
+            br
+            textarea(id='scriptArea', name='code', placeholder='HTML5 code')br
+            br
+            input(type='submit', value='Publish Script', id='scriptSubmit')
+        br
+        a(href='/user/#{user}/upload/file', id='fileSubmit') *or Upload single HTML file
+          
 
+          
     #pages_display(style='width:100%;float:left;')
       h1(style='font-size:220%;') Pages (Beta)
       #pages_list(style='border-top: 1px solid #c2c2c2;padding-left:2%;width:100%')
@@ -44,5 +54,6 @@ block Content
            a(href='/user/#{user}/#{page.title}', style='text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;')= page.title
            label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 130%;') Created on:
            label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 130%;')= page.created
-
+           if(typeof username != 'undefined')
+             a(href='/user/#{user}/#{page.title}/delete', style='text-decoration:none;color:#343838;font-weight: bold; font-size:120%;font-family:verdana;') &nbspDelete
 
