@@ -13,11 +13,11 @@ exports.home = function(req, res){
 
 if(typeof username === 'undefined'){
   
-  res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
+  res.render('layout_home', {title: 'Home | ' + t, failure1:failure1, username:req.session.username});
   failure1 = null;
 }else{
   
-  res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
+  res.render('layout_home', {title: 'Home | ' + t, failure1:failure1, username:req.session.username});
   failure1 = null;
 }
 };
@@ -38,7 +38,7 @@ exports.home_post_handler = function(req, res){
 
                     username = req.session.username;
                     failure1 = null;
-                    res.redirect('/user/'+username)
+                    res.redirect('/user/'+req.session.username)
                 }else{
                     console.log('username and password do not match for username, ' + username1);
                     failure1 = 'Username and password do not match.'
@@ -64,7 +64,7 @@ exports.page_contact = function(req, res){
     if(typeof username === 'undefined'){
   res.render('contact', {title: 'Home | ' + t})
     }else
-  res.render('contact', {title: 'Home | ' + t});
+  res.render('contact', {title: 'Home | ' + t, username:req.session.username});
 
 };
   

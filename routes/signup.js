@@ -9,7 +9,7 @@ var failure2;
 var t = 'Ninjapages';
 exports.signup = function(req, res){
 
-	res.render('signup', {title: 'Sign Up | ' + t, failure:null});
+	res.render('signup', {title: 'Sign Up | ' + t, username:req.session.username, failure:null});
 };
 exports.signup_post_handler = function(req, res){
 
@@ -93,8 +93,8 @@ var twenty_six_char = "12345678912345678912345678";
 
 
 exports.success = function(req, res){
-	res.render('signupSuccess', {title: 'Successful Signup | ' + t})
+	res.render('signupSuccess', {title: 'Successful Signup | ' + t, username:req.session.username})
 }
 exports.failure = function(req, res){
-	res.render('signup', {title: 'Failed Signup | ' + t, failure:failure2})
+	res.render('signup', {title: 'Failed Signup | ' + t, username:req.session.username,failure:failure2})
 }

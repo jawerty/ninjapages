@@ -2,6 +2,7 @@
 /**
  * Module dependencies.
  */
+
 var crypto = require('crypto');
 require( './db' );
 
@@ -14,6 +15,7 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
+var store = new express.session.MemoryStore;
 
 app.configure(function(){
   app.use(express.logger('dev'));
@@ -24,7 +26,9 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
+  app.use(express.session({ secret: 'cb4c90dbe7dbd914df17d2446a80ae60',
+                            store: store
+                             }));
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(app.router);
 });
@@ -62,6 +66,7 @@ app.get('/signup-success', signup.success);
 
 
 app.get('/contact', home.page_contact);
+
 app.get('/logout', function(req, res) {
     
     delete req.session.username;

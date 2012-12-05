@@ -37,7 +37,9 @@ exports.my_pages = function(req, res){
 		 				user: usern,
 		 				pages:pages,
 		 				users:users,
-		 				failure:failure4
+		 				failure:failure4,
+		 				username:req.session.username
+
  					})
  					failure4 = null
  				})
@@ -47,7 +49,8 @@ exports.my_pages = function(req, res){
 	 				title: usern + '\'s Page | ' + t, 
 	 				user: usern, 
 	 				pages:null,
-	 				failure:failure4
+	 				failure:failure4,
+	 				username:req.session.username
 	 			});
 	 			failure4 = null
  			}
@@ -55,7 +58,7 @@ exports.my_pages = function(req, res){
  	}else{
 
  		failure3 = 'User does not exist. Redirecting to home in a few seconds';
- 		res.render('pages_error', {title: 'PagesError | ' + t, failure: failure3})
+ 		res.render('pages_error', {title: 'PagesError | ' + t, username:req.session.username, failure: failure3})
  		
  	}
  }));
@@ -98,7 +101,7 @@ exports.my_pages_post_handler = function(req, res){
 exports.edit_profile = function(req, res){
 	u = req.params.id;
 	if(req.session.username==u){
-		res.render('edit_profile', {title: 'Edit Profile | ' + t, failure:failure1})
+		res.render('edit_profile', {title: 'Edit Profile | ' + t, username:req.session.username, failure:failure1})
 	}else{
 		res.redirect('/')
 	}
@@ -206,6 +209,7 @@ title = req.params.page;
  				console.log('running code')
  			}else{
 	 	 		res.render('user_pages', {
+	 	 			username:req.session.username,
 	 				page:null
 	 			});
  			}
@@ -247,7 +251,7 @@ exports.file_upload = function(req, res){
 u = req.params.user;
 
 	if(req.session.username==u){
-		res.render('file_upload', {title: 'File Upload | ' + t, user:u, failure:failure5, win:win})
+		res.render('file_upload', {title: 'File Upload | ' + t, user:u, username:req.session.username, failure:failure5, win:win})
 		failure5 = null;
 		win = null;
 	}else{
