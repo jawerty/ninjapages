@@ -1,5 +1,5 @@
 #footer {
-
+  position: relative;
   margin: 0 auto;
   height: 150px;
   padding: 0;
@@ -8,8 +8,7 @@
   width:100%;
   background-color: #343838;
    color: #444;
-  min-width: 1240px;
-  max-width: 100%;
+  min-width: 953px;
   padding-top: 10px;
   box-shadow:  inset 0 4px 4px -1px #eee;
 }

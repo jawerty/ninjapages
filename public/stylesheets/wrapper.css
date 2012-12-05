@@ -110,7 +110,7 @@
   border-left: 1px solid #c1c1c1;
   border-right: 1px solid #c1c1c1;
   margin: 0 auto;
-  margin-top: 5.5%;
+  
   padding-bottom: 2%;
   box-shadow:  inset 0 4px 2px -2px #eee;
 
@@ -176,7 +176,14 @@
 	color: #505050;
 
 }
+#scriptArea:-moz-placeholder{
+	color: #bbb;
 
+}
+#scriptTitle:-moz-placeholder{
+	color:#bbb;
+
+}
 .form_text:-moz-placeholder{
 	color: #bbb;
 }
@@ -308,6 +315,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	padding: 1%;
 	color: #505050;
 	resize: none;
+	font-family: verdana;
 }
 
 #scriptSubmit{

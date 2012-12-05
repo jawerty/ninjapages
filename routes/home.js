@@ -14,6 +14,7 @@ exports.home = function(req, res){
 if(typeof username === 'undefined'){
   
   res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});
+  failure1 = null;
 }else{
   
   res.render('layout_home', {title: 'Home | ' + t, failure1:failure1});

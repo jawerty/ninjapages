@@ -13,7 +13,7 @@ var win;
 /**Date config**/
 var date = new Date();
 var dd = date.getDate()
-var mm = date.getMonth()
+var mm = date.getMonth() + 1
 var yyyy = date.getFullYear()
 if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} date = mm+'/'+dd+'/'+yyyy; 
 /**end Date config**/
@@ -71,16 +71,23 @@ exports.my_pages_post_handler = function(req, res){
 	}else{
 		console.log('title is not empty')
 		
-		
-			var newPage = new page({ 
-			title: title1,
-	        page_code: req.body.code,
-			user: req.session.username,
-			created: date
+		page.findOne({'title': title1, "user": usern}, function(err, match){
+			if(match){
+				failure4 = 'You already have a page with that title'
+				console.log('publish(title exists among user) error')
+			}else{
+				var newPage = new page({ 
+				title: title1,
+		        page_code: req.body.code,
+				user: req.session.username,
+				created: date
 
-	    	});
-	    	newPage.save();
-	    	console.log('non-file uploaded')
+		    	});
+		    	newPage.save();
+		    	console.log('non-file uploaded')
+			}
+		});
+			
 	
 	}
 
