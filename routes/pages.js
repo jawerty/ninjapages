@@ -84,6 +84,7 @@ exports.my_pages_post_handler = function(req, res){
 				failure4 = 'You already have a page with that title'
 				console.log('publish(title exists among user) error')
 			}else{
+				title1 = title1.replace(/ /g,"_");
 				var newPage = new page({ 
 				title: title1,
 		        page_code: req.body.code,
@@ -286,6 +287,7 @@ exports.file_upload_post_handler = function(req, res){
 				if(err){
 					console.log(err)
 				}
+				t = t.replace(/ /g,"_");
 				var newPage = new page({ 
 				title: t,
 			    page_code: data,
