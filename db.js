@@ -30,7 +30,10 @@ var pageSchema = new Schema({
     title: String,
 	page_code: String,
 	user: String,
-    created: String
+    created: String,
+    file: { data: Buffer, contentType: String }
 })
+
+
 var user = db.model('user', userSchema);
 var page = db.model('page', pageSchema);

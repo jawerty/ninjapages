@@ -1,0 +1,11 @@
+extends layout
+block Content
+  #login_signup
+    br
+    form(method='POST', style='margin:0 auto;margin-top:15%;margin-left:10%;margin-right:10%;text-align:center;')
+      p #{failure6}
+      h1 Edit '#{pages['title']}'
+      br
+      textarea(id='scriptArea', name='code', placeholder='HTML5 code', value='') #{pages['page_code']}
+      br 
+      input(type='submit', id='scriptSubmit', value='Edit', name='html_edit')

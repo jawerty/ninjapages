@@ -5,7 +5,6 @@ block Content
     #user_profile(style='float:left')
       br
       h1(style='margin-left: 0%;font-size:250%') #{user}'s Profile
-      br 
       if(typeof username!='undefined')
         a(href='/user/#{user}/edit', style='text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;') Edit Info
       br
@@ -42,10 +41,9 @@ block Content
             br
             input(type='submit', value='Publish Script', id='scriptSubmit')
         br
-        a(href='/user/#{user}/upload/file', id='fileSubmit') *or Upload a single HTML file
+        a(href='/user/#{user}/upload/file', id='fileSubmit') *or Upload your HTML files
           
-
-          
+    br
     #pages_display(style='width:100%;float:left;')
       h1(style='font-size:220%;') Pages (Beta)
       #pages_list(style='border-top: 1px solid #c2c2c2;padding-left:2%;width:98%')
@@ -56,4 +54,8 @@ block Content
            label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 130%;')= page.created
            if(typeof username != 'undefined')
              a(href='/user/#{user}/#{page.title}/delete', style='text-decoration:none;color:#343838;font-weight: bold; font-size:120%;font-family:verdana;') &nbspDelete
+
+             label(style='text-decoration:none;color:#00B4CC;font-weight: bold; font-size:120%;font-family:verdana;')&nbsp|
+
+             a(href='/user/#{user}/#{page.title}/edit', style='text-decoration:none;color:#343838;font-weight: bold; font-size:120%;font-family:verdana;') &nbspEdit
 

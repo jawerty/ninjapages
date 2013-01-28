@@ -1,15 +1,21 @@
 t = 'Ninjapages'
 require( '../db' );
-fs = require('fs');
+var sleep = require('sleep')
+var fs = require('fs');
+var unzip = require('unzip');
 var mongoose = require( 'mongoose' );
+
 var user     = mongoose.model( 'user' );
 var page     = mongoose.model( 'page' );
-var sleep = require('sleep')
+
+var failure1;
 var failure3;
 var failure4;
 var failure5;
-var failure1;
+var failure6;
+
 var win;
+
 /**Date config**/
 var date = new Date();
 var dd = date.getDate()
@@ -67,7 +73,6 @@ exports.my_pages_post_handler = function(req, res){
 	var usern = req.params.id;
 	var title1 = req.body.title; 
 
-	
 	if (title1=='' || title1 == ' ' || typeof title1 == 'undefined'){
 		failure4 = 'Please add a Title'
 		console.log('publish error')
@@ -201,12 +206,19 @@ title = req.params.page;
  		page.findOne({"user": usern, "title":title}, function(err, page){
 
  			if(page){
- 				code = page['page_code'];
- 				
- 				console.log(code)
- 				res.send(code);
- 				
- 				console.log('running code')
+ 				if (page['page_code'] == null){
+ 										
+					//nothing
+
+ 				}else{
+ 					code = page['page_code'];
+ 					
+ 					console.log(code)
+ 					res.send(code);
+
+ 					console.log('running code') 					
+ 				}
+
  			}else{
 	 	 		res.render('user_pages', {
 	 	 			username:req.session.username,
@@ -263,7 +275,7 @@ exports.file_upload_post_handler = function(req, res){
 	p = req.params.page;
 	t = req.body.title1;
 	html = req.files.html_file.path;
-	console.log('psuedo')
+	console.log(html)
 	if (t=='' || t == ' ' || typeof t == 'undefined'){
 		failure5 = 'Please add a Title'
 		console.log('publish file error')
@@ -278,22 +290,82 @@ exports.file_upload_post_handler = function(req, res){
 				title: t,
 			    page_code: data,
 				user: req.session.username,
-				created: date
+				created: date,
+				file: null
 
 			  	});
 			   	newPage.save();
 			   	console.log('file uploaded');
 			   	failure5 = null;
-			   	win = 'File upload completed...'
+			   	win = 'Single file upload completed...'
 			   	res.redirect('/user/'+u+'/upload/file')
 				
 			});
+		}
+		else if(req.files.html_file.type == 'application/zip'){
+			/*
+			var newPage = new page({ 
+				title: t,
+			    page_code: null,
+				user: req.session.username,
+				created: date
+
+		 	});
+			newPage.file.data = fs.readFileSync(html);
+			newPage.file.contentType = 'application/zip';
+			console.log(newPage.file.data);
+			newPage.save();
+
+			console.log('saved zip');
+			*/
+			win = 'Zip file upload is currently in production (Sorry for the inconvenience...'
+			res.redirect('/user/'+u+'/upload/file')
 		}else{
-			failure5 = 'Incorrect file format (only HTML files allowed)';
+			failure5 = 'Incorrect file format (only HTML files and zipped folders allowed)';
 			console.log('File format incorrect');
 			res.redirect('/user/'+u+'/upload/file')
 		}
-
 	}
+}
 
+exports.file_edit = function(req, res){
+	u = req.params.user;
+	p = req.params.page;
+	if(req.session.username==u){
+		page.findOne({title: p}, function(err, page){
+			if(page){
+				res.render('edit_page', {title: 'Page Edit | ' + t, user:u, pages:page, failure6: failure6, username:req.session.username, failure6:failure6})
+			}else{
+				res.redirect('/')
+			}
+		})
+	}else{
+		res.redirect('/');
+	}
+}
+exports.file_edit_post_handler = function(req, res){
+	u = req.params.user;
+	p = req.params.page;
+	code = req.body.code;
+
+	user.findOne({user_name: u}, function(err, user){
+		if (user){
+			page.findOne({title: p}, function(err, page){
+				if (page){
+					page.page_code = code;
+					page.save();
+					console.log('Page edited');
+					res.redirect('/user/' + u);
+				}else{
+					failure6 = 'Page not found'
+					console.log('page not found in file edit')
+					res.redirect('/user/' + u + '/' + p+ '/edit')
+				}
+			})
+		}else{
+			failure6 = 'User not found'
+			console.log('user not found in file edit')
+			res.redirect('/user/' + u + '/' + p+ '/edit')
+		}
+	})
 }
