@@ -58,6 +58,9 @@ app.post('/user/:user/:page/delete', pages.page_delete_post_handler);
 app.get('/user/:user/upload/file', pages.file_upload)
 app.post('/user/:user/upload/file', pages.file_upload_post_handler)
 
+app.get('/user/:user/:page/edit', pages.file_edit);
+app.post('/user/:user/:page/edit', pages.file_edit_post_handler);
+
 app.get('/signup', signup.signup);
 app.post('/signup', signup.signup_post_handler);
 
@@ -68,7 +71,6 @@ app.get('/signup-success', signup.success);
 app.get('/contact', home.page_contact);
 
 app.get('/logout', function(req, res) {
-    
     delete req.session.username;
     username = undefined; 
     console.log(username);
