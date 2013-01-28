@@ -108,11 +108,10 @@ exports.edit_profile = function(req, res){
 	u = req.params.id;
 	if(req.session.username==u){
 		res.render('edit_profile', {title: 'Edit Profile | ' + t, username:req.session.username, failure:failure1})
+		failure1 = null;
 	}else{
 		res.redirect('/')
 	}
-	
-	
 }
 exports.edit_profile_post_handler = function(req, res){
 	u = req.params.id;
@@ -122,9 +121,6 @@ exports.edit_profile_post_handler = function(req, res){
 	bio = req.body.bio;
 	website = req.body.website;
 	
-
-
-
 	if (website=='' || website==' ' || typeof website == 'undefined'){
 		console.log('No website was passed')
 	}else{
