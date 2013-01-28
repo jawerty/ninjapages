@@ -1,4 +1,4 @@
-isRFC822ValidEmail = function(sEmail) {
+exports.isRFC822ValidEmail = function(sEmail) {
 
   var sQtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]';
   var sDtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]';

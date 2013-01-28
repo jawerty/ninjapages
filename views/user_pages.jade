@@ -23,8 +23,11 @@ block Content
       label= users['email']
       br 
       br
-      label(style='font-weight:bold;') Website:&nbsp
-      a(href='#{users['site']}', style='word-wrap:break-word;text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;')= users['site']
+      if (users['site'] == null)
+        br
+      else
+        label(style='font-weight:bold;') Website:&nbsp
+        a(href='#{users['site']}', style='word-wrap:break-word;text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;')= users['site']
     if (typeof username == 'undefined')
       p(style='margin-left:3%')
     else
