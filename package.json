@@ -1,6 +1,6 @@
 {
   "name": "Ninjapages",
-  "description": "Microdeployment, developing and hosting webpages on the fly.",
+  "description": "Microhosting, developing and hosting webpages on the fly.",
   "version": "0.1",
   "private": true,
   "engines": {
