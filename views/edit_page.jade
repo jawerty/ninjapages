@@ -8,7 +8,7 @@ block Content
       br
       textarea(id='scriptArea', name='code', placeholder='HTML5 code', value='') #{pages['page_code']}
       br 
-      input(type='submit', id='scriptSubmit', value='Edit', name='html_edit')
+      input(type='submit', id='scriptSubmit', style='text-align:center;margin:0 auto;',)value='Edit', name='html_edit')
   script(type='text/javascript')
     var editor = CodeMirror.fromTextArea(document.getElementById("scriptArea"), {
       value: 'Enter your code here',
