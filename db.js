@@ -22,7 +22,6 @@ var userSchema = new Schema({
     password1: String,
     bio: String,
     site: String
-
 })
 
 var pageSchema = new Schema({

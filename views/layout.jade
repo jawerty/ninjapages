@@ -4,17 +4,22 @@ html
     title= title
     link(rel='image_src', href='http://ninjapages.herokuapp.com/images/ninjapages_icon.png')
     link(rel="shortcut icon", href="/images/ninjapages_icon.png")
+    link(rel="stylesheet", href="/codemirror/lib/codemirror.css")
     link(rel='stylesheet', href='/stylesheets/reset.css')
     link(rel='stylesheet', href='/stylesheets/header.css')
     link(rel='stylesheet', href='/stylesheets/wrapper.css')
     link(rel='stylesheet', href='/stylesheets/footer.css')
 
-    meta(content='Deploy and host HTML5 webpages in the cloud. Ninjapages is the fastest and simplest solution to hosting static pages.', NAME='description')
+    meta(content='Develop and host HTML5 webpages in the cloud. Ninjapages is the fastest and simplest solution to hosting static pages.', NAME='description')
     meta(content='ninjapages, Jared, Wright, HTML5, cloud, nodejs', NAME='keywords')
     meta(content='Jared Wright', name='author')
     meta(charset='UTF-8')
     meta(content='text/html; charset=utf-8', HTTP-EQUIV='Content-Type')
 
+    script(src="/codemirror/lib/codemirror.js")
+    script(src="/codemirror/mode/javascript/javascript.js")
+    script(src="/codemirror/mode/htmlmixed/htmlmixed.js")
+    script(src="/codemirror/mode/xml/xml.js")
     script(src='/javascripts/jquery-1.8.3.min.js')
     script(src='/javascripts/clearForms.js')
 
@@ -22,17 +27,15 @@ html
   body
     span(id='box')
       #header
+
         #nav
           ol
-          
             #li_logo
               li
                 a(href="/")
-                  img(src='/images/ninjapages_logo.png', height=40, width=190)
-              
-                
+                  img(src='/images/ninjapages_logo.png', height=40, width=190)    
+            
             #options
-              
               li#search
                 form(method='get', id='searchForm')
                   input(type='text', name='search',placeholder='search (alpha)', class='cool_outline1', id='search_text')
