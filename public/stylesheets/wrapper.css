@@ -1,6 +1,5 @@
 
 #wrapper {
-
 	background-color: #F7F7F7;
   min-width: 950px;
   max-width: 950px;
@@ -29,7 +28,7 @@
     background-color: #00B4CC;
 
 }
-#mainArea_blog{
+#description{
 	background-color: #FbFbFb;
 	padding: 3%;
 	width: 90%;
@@ -41,17 +40,7 @@
 	border: 1px solid #E0E0E0;
 	box-shadow: inset 1px 1px 1px 2px #eee;
 }
-#mainArea{
-	background-color: #FbFbFb;
-	padding:3%;
-	width: 90%;
-	border-radius: 3px;
-	margin-top: 45px;
-	margin-right: 20px;
-	margin-left: 10px;
-	margin: 0 auto;
-	box-shadow: inset 3px 3px 3px 3px #eee;
-}
+
 #sideArea{
 	min-width: 0px;
 	max-width: 1000px;
@@ -99,40 +88,37 @@
 
 }
 
-/*****LOGIN/SIGNUP*****/
-#login_signup{
+#container{
   background-color: #F7F7F7;
   min-width: 950px;
   max-width: 950px;
-  max-height: 10000px;
-  min-height: 900px;
-    
+  overflow:hidden;
   border-left: 1px solid #c1c1c1;
   border-right: 1px solid #c1c1c1;
   margin: 0 auto;
-  
+  left:50%;
   padding-bottom: 2%;
   box-shadow:  inset 0 4px 2px -2px #eee;
 
 
 }
-#login_signup h1{
+#container h1{
   color:#343838;
   font-size: 150%;
   font-family: verdana;
   margin: 3%;
 }
-#login_signup::-webkit-scrollbar {
+#container::-webkit-scrollbar {
     width: 1%;
     
 }
  
-#login_signup::-webkit-scrollbar-track {
+#container::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 1% rgba(0,0,0,0.3); 
     background-color: #E9E9E9;
 }
  
-#login_signup::-webkit-scrollbar-thumb {
+#container::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 1% #FbFbFb; 
     background-color: #00B4CC;
 
@@ -146,7 +132,7 @@
 	padding-top: 10%;
 	padding:5%;
 	width: 80%;
-	font-size: 85%;
+	font-size: 120%;
 	text-align: center;
 
 }
@@ -155,7 +141,7 @@
   color: #00B4CC;
   font-family: verdana;
   font-weight: bold;
-  font-size: 110%;
+  font-size: 120%;
 }
 #labellogin a:hover{
 	text-decoration: underline;
@@ -166,7 +152,7 @@
 	height: 100%;
 	border-radius: 3px;
 	border: 2px solid #C2C2C2;
-	font-size: 170%;
+	font-size: 120%;
 	box-shadow: inset 3px 3px 3px 3px #eee;
 	outline-color: #00B4CC;
 	outline-width: 2px;
@@ -196,17 +182,17 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 }
 
 .form_button{
-	margin-left: 8%;
     font-family: verdana;
-	width: 130%;
+	width: 140px;
 	height: 150%;
-	color: #F8F8F8;
+	color: #fff;
 	padding: 10%;
-	font-size: 230%;
+	font-size: 140%;
 	border: 1px solid #C2C2C2;
-	padding: 5%;
+	padding:  6px;
 	border-radius: 5px;
 	background-color: #00B4CC;
+	margin: 10px;
 }
 
 .form_text_signup{
@@ -248,26 +234,10 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	text-align: left;
 }
 
-#signup_submit{
-    font-family: verdana;
-	width: 20%;
-	height: 100%;
-	color: #F8F8F8;
-	padding: 1%;
-	font-size: 120%;
-	border: 1px solid #C2C2C2;
-	border-radius: 5px;
-	background-color: #00B4CC;
-	padding-top: 2%;
-	padding-bottom: 2%;
-   margin: 0 auto;
-   cursor: pointer;
-   margin-top: 3%;
-}
 #home_link{
 	text-decoration:none;
 	color:#00B4CC;
-	font-size:40px;
+	font-size:120%;
 }
 #home_link:hover{
 	text-decoration:underline; 
@@ -282,7 +252,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 #user_profile label{
 	font-family: sans-serif;
 	color:#505050;
-	font-size: 130%;
+	font-size: 120%;
 }
 #scriptForm{
 	margin: 5%;
@@ -297,6 +267,7 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	outline-width: 0px;
 	padding: 1%;
 	color: #505050;
+	font-family: sans-serif;
 }
 #scriptArea{
 	width: 100%;
@@ -308,21 +279,9 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	padding: 1%;
 	color: #505050;
 	resize: none;
-	font-family: verdana;
+	font-family: sans-serif;
 }
 
-#scriptSubmit{
-	font-family: verdana;
-	height: 30%;
-	color: #F8F8F8;
-	padding: 5%;
-	font-size: 140%;
-	border: 1px solid #C2C2C2;
-	padding: 1%;
-	border-radius: 5px;
-	background-color: #00B4CC;
-	margin-top: 2%;
-}
 
 #edit_profile{
 	text-align: center;
@@ -334,33 +293,19 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 	height: 100px;
 	border-radius: 5px;
 	border: 1px solid #C2C2C2;
-	font-size: 170%;
+	font-size: 150%;
 	box-shadow: inset 3px 3px 3px 3px #eee;
 	outline-color: #00B4CC;
 	outline-width: 1%;
 	padding: 1%;
 	color: #505050;
 	resize: none;
-	font-family: verdana;
+	font-family: sans-serif;
 }
 #bio:-moz-placeholder{
 	color:#bbb;
 }
-#edit_submit{
-    font-family: verdana;
-	width: 20%;
-	height: 60%;
-	color: #F8F8F8;
-	font-size: 240%;
-	border: 1px solid #C2C2C2;
-	border-radius: 5px;
-	background-color: #00B4CC;
-	padding-top: 1%;
-	padding-bottom: 1%;
-   margin: 0 auto;
-   cursor: pointer;
-   margin-top: 3%;
-}
+
 #html_upload{
 	border: 1px solid #d2d2d2;
 	border-radius: 8px;
@@ -369,7 +314,8 @@ textarea:-moz-placeholder, input:-moz-placeholder {
 
 }
 #fileSubmit{
-	font-size:130%;
+	font-size:150%;
+	padding: 15px;
 	color:#343838;
 	font-family:verdana;
 	text-decoration:none;

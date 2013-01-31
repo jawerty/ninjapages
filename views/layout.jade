@@ -44,17 +44,16 @@ html
                   input(type='text', name='search',placeholder='search (alpha)', class='cool_outline1', id='search_text')
               
               #options_list
-                if (typeof username != 'undefined')
-                  - var x = username
-                  if (x.length > 16)
-                    x = x.substring(0, 11) + '...'
-                  li(name='user', style='font-size:110%;') Hello, <label style='color:#00B4CC'>#{x}</label>
-                li
-                  a(href='/') Home
-                li |
+            
+                if (typeof username == 'undefined')
+                  li
+                    a(href='/') Login
+                  li |
+                else
+
                 if (typeof username != 'undefined')
                   li 
-                    a(href='/user/#{username}') My Pages
+                    a(href='/user/#{username}') #{username}
                   li |
 
                 li
@@ -86,3 +85,4 @@ html
         br
         a(href="https://twitter.com/Jawerty", class="twitter-follow-button", data-show-count="false", data-size="large") Follow @Jawerty
         script(type='text/javascript') !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+      br(class='clear')

@@ -1,6 +1,6 @@
 extends layout
 block Content
-  #login_signup
+  #container
     br
     form(method='POST', style='margin:0 auto;margin-top:15%;margin-left:10%;margin-right:10%;')
       p(style='text-align:center;margin:0 auto;') #{failure6}
@@ -8,7 +8,7 @@ block Content
       br
       textarea(id='scriptArea', name='code', placeholder='HTML5 code', value='') #{pages['page_code']}
       br 
-      input(type='submit', id='scriptSubmit', style='text-align:center;margin:0 auto;', value='Edit', name='html_edit')
+      input(type='submit', class='form_button', style='text-align:center;margin:0 auto;', value='Edit', name='html_edit')
   script(type='text/javascript')
     var editor = CodeMirror.fromTextArea(document.getElementById("scriptArea"), {
       value: 'Enter your code here',

@@ -44,7 +44,7 @@ q:before, q:after {
 a {
     margin:0;
     padding:0;
-    font-family: verdana;
+    font-family: sans-serif;
     font-size: 120%;
     vertical-align:baseline;
     background:transparent;
@@ -88,11 +88,11 @@ input, select {
 p {
   font-family: sans-serif;
   color:#505050;
-  font-size: 130%;
+  font-size: 120%;
 }
 
 #box{
   width: 100%;
-  display: inline-block;
-  position: absolute;
+  margin: 0 auto;
 }
+.clear { clear:both; }

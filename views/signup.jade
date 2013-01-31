@@ -1,7 +1,7 @@
 extends layout
 block Content
-  #login_signup
-    form(method='post', action='/signup')
+  #container
+    form(autocomplete='off',method='post', action='/signup')
       #signup_form
         img(src='/images/ninjapages_signup.png', height=110, width=330, style='padding-top:40px;display: block;   margin-left: auto;   margin-right: auto;')br
         p #{failure}
@@ -15,4 +15,4 @@ block Content
             input(type='text', name='email', class='form_text_signup', placeholder='email')
                   
           div(style='text-align:center;')        
-            input(type='submit',id='signup_submit', value='Submit', name='submitSignup')
+            input(type='submit', class='form_button', value='Submit', name='submitSignup')

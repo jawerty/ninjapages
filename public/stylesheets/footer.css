@@ -1,13 +1,15 @@
 #footer {
+  float:left;
   position: relative;
   margin: 0 auto;
-  height: 150px;
+  height: 120px;
   padding: 0;
   text-align: center;
-  font-size: 16px;
+  display:inline-block;
+  font-size: 100%;
   width:100%;
   background-color: #343838;
-   color: #444;
+  color: #444;
   min-width: 953px;
   padding-top: 10px;
   box-shadow:  inset 0 4px 4px -1px #eee;
@@ -19,7 +21,7 @@
 	text-decoration:none;
 	color: #00B4CC;
   margin: 10px;
-  font-size: 20px;
+  font-size: 120%;
 }
 #footer_content {
 }

@@ -13,11 +13,11 @@ exports.home = function(req, res){
 
 if(typeof username === 'undefined'){
   
-  res.render('layout_home', {title: 'Home | ' + t, failure1:failure1, username:req.session.username});
+  res.render('login', {title: 'Home | ' + t, failure1:failure1, username:req.session.username});
   failure1 = null;
 }else{
   
-  res.render('layout_home', {title: 'Home | ' + t, failure1:failure1, username:req.session.username});
+  res.render('login', {title: 'Home | ' + t, failure1:failure1, username:req.session.username});
   failure1 = null;
 }
 };

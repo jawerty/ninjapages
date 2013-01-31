@@ -1,12 +1,12 @@
 extends layout
 block Content
-
-  #login_signup
+  #container
     #user_profile(style='float:left')
       br
       h1(style='margin-left: 0%;font-size:250%') #{user}'s Profile
+      br
       if(typeof username!='undefined')
-        a(href='/user/#{user}/edit', style='text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;') Edit Info
+        a(href='/user/#{user}/edit', style='text-decoration:none;color:#00B4CC;font-size:120%;') Edit Info
       br
       br
       label(style='font-weight:bold;') Bio:&nbsp
@@ -27,14 +27,14 @@ block Content
         br
       else
         label(style='font-weight:bold;') Website:&nbsp
-        a(href='#{users['site']}', style='word-wrap:break-word;text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;')= users['site']
+        a(href='#{users['site']}', style='word-wrap:break-word;text-decoration:none;color:#00B4CC;font-size:120%;')= users['site']
     if (typeof username == 'undefined')
       p(style='margin-left:3%')
     else
       #forms(style='width:50%;margin-left:1%;float:left;border-left: 1px solid #c2c2c2;')
         form(method='post', enctype="multipart/form-data" )
           #scriptForm(
-            h1(style='margin-left:0%;color:#00B4CC;') Quick Publish
+            h1(style='margin-left:0%;color:#00B4CC;') Quick Develop
             
             p #{failure}
             br
@@ -42,9 +42,9 @@ block Content
             br
             textarea(id='scriptArea', name='code', value="Enter your code here", placeholder='HTML5 code')br
             br
-            input(type='submit', value='Publish Script', id='scriptSubmit')
+            input(type='submit', value='Upload', class='form_button')
         br
-        a(href='/user/#{user}/upload/file', id='fileSubmit') *or Upload your HTML files
+        a(href='/user/#{user}/upload/file', id='fileSubmit') *or upload files
           
     br
     #pages_display(style='width:100%;float:left;')
@@ -52,15 +52,15 @@ block Content
       #pages_list(style='border-top: 1px solid #c2c2c2;padding-left:2%;width:98%')
         for page in pages
           li(style='list-style:none;margin:1%;')
-           a(href='/user/#{user}/#{page.title}', style='text-decoration:none;color:#00B4CC;font-size:150%;font-family:verdana;')= page.title
-           label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 130%;') Created on:
-           label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 130%;')= page.created
+           a(href='/user/#{user}/#{page.title}', style='text-decoration:none;color:#00B4CC;font-size:140%;')= page.title
+           label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 120%;') Created on:
+           label(style='margin-left: 1%;font-family: sans-serif;color:#505050;font-size: 120%;')= page.created
            if(typeof username != 'undefined')
-             a(href='/user/#{user}/#{page.title}/delete', style='text-decoration:none;color:#343838;font-weight: bold; font-size:120%;font-family:verdana;') &nbspDelete
+             a(href='/user/#{user}/#{page.title}/delete', style='text-decoration:none;color:#343838;font-weight: bold; font-size:140%;font-family:verdana;') &nbspDelete
 
-             label(style='text-decoration:none;color:#00B4CC;font-weight: bold; font-size:120%;font-family:verdana;')&nbsp|
+             label(style='text-decoration:none;color:#00B4CC;font-weight: bold; font-size:140%;font-family:verdana;')&nbsp|
 
-             a(href='/user/#{user}/#{page.title}/edit', style='text-decoration:none;color:#343838;font-weight: bold; font-size:120%;font-family:verdana;') &nbspEdit
+             a(href='/user/#{user}/#{page.title}/edit', style='text-decoration:none;color:#343838;font-weight: bold; font-size:140%;font-family:verdana;') &nbspEdit
   script(type='text/javascript')
     var editor = CodeMirror.fromTextArea(document.getElementById("scriptArea"), {
       mode: "text/html",

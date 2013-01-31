@@ -1,8 +1,8 @@
 extends layout 
 block Content
-  #login_signup
+  #container
     #edit_profile
-      form(method='post')
+      form(autocomplete='off', method='post')
         h1 Edit Profile Info
         p #{failure}
         input(type='text', name='newemail', class='form_text',placeholder='New Email')br
@@ -10,4 +10,4 @@ block Content
         input(type='password', name='newpassconfirm',class='form_text', placeholder='New Password Confirm')br
         textarea(id='bio', name='bio', placeholder='Insert Bio')br
         input(type='text', name='website', class='form_text',placeholder='Personal Website')br
-        input(type='submit', name='submitEdit', id='edit_submit', value='Edit')
+        input(type='submit', name='submitEdit', class='form_button', value='Edit')
