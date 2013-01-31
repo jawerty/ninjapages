@@ -40,7 +40,7 @@ block Content
             br
             input(type='text', name='title', placeholder='Title', id='scriptTitle')br
             br
-            textarea(id='scriptArea', name='code', placeholder='HTML5 code')br
+            textarea(id='scriptArea', name='code', value="Enter your code here", placeholder='HTML5 code')br
             br
             input(type='submit', value='Publish Script', id='scriptSubmit')
         br
@@ -63,7 +63,6 @@ block Content
              a(href='/user/#{user}/#{page.title}/edit', style='text-decoration:none;color:#343838;font-weight: bold; font-size:120%;font-family:verdana;') &nbspEdit
   script(type='text/javascript')
     var editor = CodeMirror.fromTextArea(document.getElementById("scriptArea"), {
-      value: 'Enter your code here',
       mode: "text/html",
       lineNumbers: true,
       tabMode: "indent",

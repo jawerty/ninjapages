@@ -45,7 +45,6 @@ exports.my_pages = function(req, res){
 		 				users:users,
 		 				failure:failure4,
 		 				username:req.session.username
-
  					})
  					failure4 = null
  				})
