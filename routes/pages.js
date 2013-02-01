@@ -39,7 +39,7 @@ exports.my_pages = function(req, res){
  			if(pages){
  				user.findOne({"user_name": usern}, function(err, users){
  					res.render('user_pages', {
-		 				title: usern + '\'s Page | ' + t, 
+		 				title: usern + ' | ' + t, 
 		 				user: usern,
 		 				pages:pages,
 		 				users:users,
@@ -51,7 +51,7 @@ exports.my_pages = function(req, res){
  				
  			}else{
 	 			res.render('user_pages', {
-	 				title: usern + '\'s Page | ' + t, 
+	 				title: usern + ' | ' + t, 
 	 				user: usern, 
 	 				pages:null,
 	 				failure:failure4,
@@ -331,7 +331,7 @@ exports.file_edit = function(req, res){
 	if(req.session.username==u){
 		page.findOne({title: p}, function(err, page){
 			if(page){
-				res.render('edit_page', {title: 'Page Edit | ' + t, user:u, pages:page, failure6: failure6, username:req.session.username, failure6:failure6})
+				res.render('edit_page', {title: p +' Edit | ' + t, user:u, pages:page, failure6: failure6, username:req.session.username, failure6:failure6})
 			}else{
 				res.redirect('/')
 			}

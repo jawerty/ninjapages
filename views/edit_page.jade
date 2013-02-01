@@ -2,13 +2,14 @@ extends layout
 block Content
   #container
     br
-    form(method='POST', style='margin:0 auto;margin-top:15%;margin-left:10%;margin-right:10%;')
+    form(method='POST', style='margin:0 auto;margin-top:15%;margin-bottom:20%;margin-left:10%;margin-right:10%;')
       p(style='text-align:center;margin:0 auto;') #{failure6}
       h1(style='text-align:center;margin:0 auto;') Edit '#{pages['title']}'
       br
-      textarea(id='scriptArea', name='code', placeholder='HTML5 code', value='') #{pages['page_code']}
+      textarea(id='scriptArea', name='code', placeholder='HTML5 code') #{pages['page_code']}
       br 
-      input(type='submit', class='form_button', style='text-align:center;margin:0 auto;', value='Edit', name='html_edit')
+      #edit_btn_box(style='text-align:center')
+        input(type='submit', class='form_button', style='text-align:center;margin: 0 auto;', value='Edit', name='html_edit')
   script(type='text/javascript')
     var editor = CodeMirror.fromTextArea(document.getElementById("scriptArea"), {
       value: 'Enter your code here',
@@ -21,4 +22,8 @@ block Content
         editor.setLineClass(hlLine, null);
         hlLine = editor.setLineClass(editor.getCursor().line, "activeline");
       }
+    });
+
+    document.getElementById('scriptArea').focus(function () {
+      $(this).animate({ height: "100em" }, 500);
     });

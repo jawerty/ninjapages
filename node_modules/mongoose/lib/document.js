@@ -33,8 +33,6 @@ var EventEmitter = require('events').EventEmitter
  */
 
 function Document (obj, fields, skipId) {
-  // node <0.4.3 bug
-  if (!this._events) this._events = {};
   this.setMaxListeners(0);
 
   if ('boolean' === typeof fields) {
@@ -225,7 +223,7 @@ Document.prototype.init = function (doc, fn) {
   init(this, doc, this._doc);
   this._storeShard();
 
-  this.emit('init');
+  this.emit('init', this);
   if (fn) fn(null);
   return this;
 };
@@ -409,11 +407,13 @@ Document.prototype.set = function (path, val, type, options) {
 
       while (i--) {
         key = keys[i];
-        if (null != path[key] && 'Object' === path[key].constructor.name
-          && !(this._path(prefix + key) instanceof MixedSchema)) {
+        pathtype = this.schema.pathType(prefix + key);
+        if (null != path[key]
+            && 'Object' == path[key].constructor.name
+            && 'virtual' != pathtype
+            && !(this._path(prefix + key) instanceof MixedSchema)) {
           this.set(path[key], prefix + key, constructing);
         } else if (this._strictMode) {
-          pathtype = this.schema.pathType(prefix + key);
           if ('real' === pathtype || 'virtual' === pathtype) {
             this.set(prefix + key, path[key], constructing);
           } else if ('throw' == this._strictMode) {
@@ -916,6 +916,7 @@ Document.prototype.validate = function (cb) {
   function complete () {
     var err = self._validationError;
     self._validationError = undefined;
+    self.emit('validate', self);
     cb(err);
   }
 };
@@ -1109,6 +1110,7 @@ function define (prop, subprops, prototype, prefix, keys) {
           return this.__getters[path];
         }
       , set: function (v) {
+          if (v instanceof Document) v = v.toObject();
           return this.set(path, v);
         }
     });

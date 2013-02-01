@@ -30,14 +30,14 @@ var twenty_six_char = "12345678912345678912345678";
         console.log('password length is not valid');
         failure2 = 'Password length must be from 8 to 26 characters';
         console.log(failure2);
-        res.redirect('/signup-failure');
+        res.redirect('/_signup');
 
     }else{
         console.log('password length is fine.');
 
         if (password1 != password2) {
         failure2 = 'Passwords do not match';
-        res.redirect('/signup-failure');
+        res.redirect('/_signup');
         
 
         }else{
@@ -46,13 +46,13 @@ var twenty_six_char = "12345678912345678912345678";
                 if (first == "" || last == "" || email == "" || password1 == "" || password2 == "" || newUsername == ""){
                     console.log('Empty field');
                     failure2 = 'You left a field empty.';
-                    res.redirect('/signup-failure');
+                    res.redirect('/_signup');
                 }else{
                     user.findOne({user_name: newUsername}, function(err, usernames) {
                         if (usernames) { 
                             console.log("user exists");
                             failure2 = 'Username already exists';
-                            res.redirect('/signup-failure');
+                            res.redirect('/_signup');
 
                         } else { 
                             console.log("user doesn't exist :)");
@@ -60,7 +60,7 @@ var twenty_six_char = "12345678912345678912345678";
                                 if (emails){
                                     console.log('email exists');
                                     failure2 = 'Email already exists';
-                                    res.redirect('/signup-failure');
+                                    res.redirect('/_signup');
                                 }else{
                                     var newUser = new user({ 
                                             first: first,
@@ -74,8 +74,8 @@ var twenty_six_char = "12345678912345678912345678";
                                     newUser.save();
 
                                     console.log(newUser + "has been initiated.");
-                    
-                                    res.redirect('/signup-success');
+                                    failure2 = 'Signup successfull'
+                                    res.redirect('/_signup');
                                 }
                             });
                             
@@ -85,16 +85,13 @@ var twenty_six_char = "12345678912345678912345678";
             }else{
                console.log('invalid email');
                failure2 = "Invalid email account.";
-               res.redirect('/signup-failure');
+               res.redirect('/_signup');
             }      
         }
     }
 };
 
 
-exports.success = function(req, res){
-	res.render('signupSuccess', {title: 'Successful Signup | ' + t, username:req.session.username})
-}
-exports.failure = function(req, res){
-	res.render('signup', {title: 'Failed Signup | ' + t, username:req.session.username,failure:failure2})
+exports.failure_success = function(req, res){
+	res.render('signup', {title: 'Signup | ' + t, username:req.session.username,failure:failure2})
 }

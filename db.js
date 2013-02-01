@@ -9,7 +9,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
     ,ObjectId = Schema.ObjectId;
 
-var db_url = process.env.MONGOLAB_URI || "http://localhost:27017/ninjapagesDB", 
+var db_url = process.env.MONGOLAB_URI || "mongodb://localhost:27017/ninjapagesDB", 
     db = mongoose.connect(db_url);
 
 

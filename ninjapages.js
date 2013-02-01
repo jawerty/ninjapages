@@ -63,8 +63,7 @@ app.post('/user/:user/:page/edit', pages.file_edit_post_handler);
 app.get('/signup', signup.signup);
 app.post('/signup', signup.signup_post_handler);
 
-app.get('/signup-failure', signup.failure);
-app.get('/signup-success', signup.success);
+app.get('/_signup', signup.failure_success);
 
 
 app.get('/contact', home.page_contact);
