@@ -14,7 +14,8 @@
 }
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
-  height: 310px;
+  min-height: 310px;
+  max-height: 600px;
   border: 1px solid #C2C2C2;
   border-radius: 3px;
   font-size: 120%;

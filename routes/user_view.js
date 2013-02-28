@@ -1,4 +1,4 @@
-var t = 'Ninjapages';
+var t = 'ninjapages';
 require( '../db' );
 var mongoose = require( 'mongoose' );
 

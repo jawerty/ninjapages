@@ -82,5 +82,5 @@ app.use(function(req,res) {
 ); 
 });
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Ninjapages server listening on port " + app.get('port'));
+  console.log("ninjapages server listening on port " + app.get('port'));
 });

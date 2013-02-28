@@ -4,10 +4,9 @@ block Content
     #user_profile(style='float:left')
       br
       h1(style='margin-left: 0%;font-size:250%;border-bottom:1px solid #C2C2C2;padding-bottom:7%') #{user}'s Profile
-      br
       if(typeof username!='undefined')
         a(href='/user/#{user}/edit', style='text-decoration:none;color:#00B4CC;font-size:120%;') Edit Info
-      br
+        br
       br
       label(style='font-weight:bold;') Bio:&nbsp
       label= users['bio']

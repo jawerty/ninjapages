@@ -1,4 +1,4 @@
-t = 'Ninjapages'
+t = 'ninjapages'
 require( '../db' );
 var sleep = require('sleep')
 var fs = require('fs');
