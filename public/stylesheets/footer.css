@@ -8,7 +8,7 @@
   display:inline-block;
   font-size: 100%;
   width:100%;
-  background-color: #343838;
+  background-color: #777;
   color: #444;
   min-width: 953px;
   padding-top: 10px;
@@ -31,4 +31,5 @@
 .twitter-follow-button{
 
 color: #606060;
+margin-bottom: 5px;
 }
